@@ -1,0 +1,3 @@
+rootProject.name = 'IgniteNext'
+
+include ':app'
