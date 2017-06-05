@@ -4,7 +4,7 @@ import { Metrics, Images } from './DevTheme'
 import FullButton from '../../App/Components/FullButton'
 
 // For API
-import API from '../../App/Services/Api'
+import API from '../../App/Services/MusicApi'
 import FJSON from 'format-json'
 
 // Styles
@@ -12,10 +12,12 @@ import styles from './Styles/APITestingScreenStyles'
 
 // API buttons here:
 const endpoints = [
-  { label: 'Github Root', endpoint: 'getRoot' },
-  { label: 'Github Rate Limit', endpoint: 'getRate' },
-  { label: 'Search User (gantman)', endpoint: 'getUser', args: ['gantman'] },
-  { label: 'Search User (skellock)', endpoint: 'getUser', args: ['skellock'] }
+  { label: 'Pearl Jam', endpoint: 'getPearlJam'},
+  { label: 'Pearl Jam Setlists', endpoint: 'getSetlists'}
+  // { label: 'Github Root', endpoint: 'getRoot' },
+  // { label: 'Github Rate Limit', endpoint: 'getRate' },
+  // { label: 'Search User (gantman)', endpoint: 'getUser', args: ['gantman'] },
+  // { label: 'Search User (skellock)', endpoint: 'getUser', args: ['skellock'] }
 ]
 
 export default class APITestingScreen extends React.Component {
@@ -28,6 +30,7 @@ export default class APITestingScreen extends React.Component {
     }
 
     this.api = API.create()
+    console.log(this.api);
   }
 
   showResult (response, title = 'Response') {
@@ -41,6 +44,7 @@ export default class APITestingScreen extends React.Component {
 
   tryEndpoint (apiEndpoint) {
     const { label, endpoint, args = [''] } = apiEndpoint
+    console.log(endpoint)
     this.api[endpoint].apply(this, args).then((result) => {
       this.showResult(result, label || `${endpoint}(${args.join(', ')})`)
     })
