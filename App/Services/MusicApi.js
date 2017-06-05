@@ -35,7 +35,7 @@ const create = (baseURL = 'http://api.setlist.fm/') => {
   // way at this level.
   //
   const getPearlJam = () => api.get('/rest/0.1/artist/83b9cbe7-9857-49e2-ab8e-b57b01038103')
-  const getSetlists = () => api.get('/rest/0.1/artist/83b9cbe7-9857-49e2-ab8e-b57b01038103/setlists')
+  const getSetlists = () => api.get('/rest/0.1/search/setlists.json?artistMbid=83b9cbe7-9857-49e2-ab8e-b57b01038103')
 
   // ------
   // STEP 3

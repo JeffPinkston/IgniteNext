@@ -13,7 +13,7 @@ import styles from './Styles/APITestingScreenStyles'
 // API buttons here:
 const endpoints = [
   { label: 'Pearl Jam', endpoint: 'getPearlJam'},
-  { label: 'Pearl Jam Setlists', endpoint: 'getSetlists'}
+  { label: 'Pearl Jam Setlists', endpoint: 'getSetlists', args: {'mbdid' : '83b9cbe7-9857-49e2-ab8e-b57b01038103'}}
   // { label: 'Github Root', endpoint: 'getRoot' },
   // { label: 'Github Rate Limit', endpoint: 'getRate' },
   // { label: 'Search User (gantman)', endpoint: 'getUser', args: ['gantman'] },
@@ -46,14 +46,14 @@ export default class APITestingScreen extends React.Component {
     const { label, endpoint, args = [''] } = apiEndpoint
     console.log(endpoint)
     this.api[endpoint].apply(this, args).then((result) => {
-      this.showResult(result, label || `${endpoint}(${args.join(', ')})`)
+      this.showResult(result, label || `${endpoint}`)
     })
   }
 
   renderButton (apiEndpoint) {
     const { label, endpoint, args = [''] } = apiEndpoint
     return (
-      <FullButton text={label || `${endpoint}(${args.join(', ')})`} onPress={this.tryEndpoint.bind(this, apiEndpoint)} styles={{marginTop: 10}} key={`${endpoint}-${args.join('-')}`} />
+      <FullButton text={label || `${endpoint}`} onPress={this.tryEndpoint.bind(this, apiEndpoint)} styles={{marginTop: 10}} key={`${endpoint}}`} />
     )
   }
 
