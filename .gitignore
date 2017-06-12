@@ -1,4 +1,4 @@
-<<<<<<< b6d920d1ac0fd30bd4aaa06f8f7a01ee1cbcf2b9
+
 # Logs
 logs
 *.log
@@ -112,4 +112,3 @@ buck-out/
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
->>>>>>> Initial commit.

@@ -8,6 +8,7 @@ import { Images } from './DevTheme'
 
 // Examples Render Engine
 import ExamplesRegistry from '../../App/Services/ExamplesRegistry'
+import '../Examples/Components/MapsExample.js'
 
 // Styles
 import styles from './Styles/PluginExamplesScreenStyles'
