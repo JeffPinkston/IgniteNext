@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import styles from './Styles/ConcertsStyle'
 
 class Concerts extends React.Component {
-  state: {
+  state =  {
     dataSource: Object
   }
 
