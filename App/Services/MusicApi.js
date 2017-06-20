@@ -1,5 +1,6 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce'
+import Reactotron from 'reactotron-react-native'
 
 // our "constructor"
 const create = (baseURL = 'http://api.setlist.fm/') => {
@@ -18,8 +19,12 @@ const create = (baseURL = 'http://api.setlist.fm/') => {
     },
     // 10 second timeout...
     timeout: 10000
-  })
-
+  })//.addMonitor(Reactotron.apisauce)
+  // if you just wanted to track on 500's
+    // api.addMonitor(response => {
+    //   if (response.problem === 'SERVER_ERROR')
+    //     Reactotron.apisauce(response)
+    // })
   // ------
   // STEP 2
   // ------

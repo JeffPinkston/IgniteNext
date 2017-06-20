@@ -6,7 +6,6 @@ import API from '../../App/Services/MusicApi'
 import FJSON from 'format-json'
 import APIResult from '../../App/Components/ApiResult'
 import FullButton from '../../App/Components/FullButton'
-import Reactotron from 'reactotron-react-native'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -31,13 +30,7 @@ export default class SelectionScreen extends React.Component {
     }
 
     this.api = API.create()
-    api.addMonitor(Reactotron.apisauce)
-    // if you just wanted to track on 500's
-    // api.addMonitor(response => {
-    //   if (response.problem === 'SERVER_ERROR')
-    //     Reactotron.apisauce(response)
-    // })
-    console.log(this.api);
+    
   }
 
   showResult (response, title = 'Response') {
